@@ -2,15 +2,15 @@ import { connectDB } from "@/lib/db";
 import courseModel from "@/model/Course";
 import { CreateCourse } from "@/types/Course";
 import { NextRequest, NextResponse } from "next/server";
-import { headers, cookies } from "next/headers";
+import { cookies } from "next/headers";
 
-export async function GET(req: NextRequest): Promise<NextResponse> {
+export async function GET(): Promise<NextResponse> {
 
-    const allHeaders = await headers();
+    // const allHeaders = await headers();
     const cookieStore = await cookies();
 
-    const authHeader = allHeaders.get("Authorization");
-    const xApiKey = allHeaders.get("x-api-key");
+    // const authHeader = allHeaders.get("Authorization");
+    // const xApiKey = allHeaders.get("x-api-key");
     
     // if (authHeader?.split(" ")[1] !== "secret-token" || xApiKey !== "super-secret-api-key") {
     //     return NextResponse.json(
